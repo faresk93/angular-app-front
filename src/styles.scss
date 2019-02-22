@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr.css';
+
+$ag-icons-path: "../node_modules/ag-grid-community/src/styles/ag-theme-balham/icons/";
+//$odd-row-background-color: #CFD8DC;
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham.scss";
+
+#toast-container > div {
+  opacity: 1;
+}
+a{
+  cursor: pointer;
+}

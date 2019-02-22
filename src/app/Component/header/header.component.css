@@ -1,0 +1,9 @@
+.nav-item a {
+  cursor: pointer;
+}
+
+.tab-active {
+  border-bottom: #0091EA 3px solid;
+}
+
+/*# sourceMappingURL=header.component.css.map */

@@ -1,0 +1,37 @@
+<ngx-spinner
+        bdColor="rgba(51,51,51,0.46)"
+        size="large"
+        color="#ffb82c"
+        type="square-jelly-box"
+        fullScreen="true"
+>
+    <p style="color: white"> Signing you In... </p>
+</ngx-spinner>
+
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+                    autocomplete="true"
+                    id="email"
+                    type="email"
+                    placeholder="Please enter your email"
+                    class="form-control"
+                    formControlName="email"
+            >
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                    autocomplete="true"
+                    id="password"
+                    type="password"
+                    placeholder="Please enter your password"
+                    class="form-control"
+                    formControlName="password"
+            >
+        </div>
+        <button #login type="submit" class="btn btn-outline-success">Login</button>
+    </form>
+</div>

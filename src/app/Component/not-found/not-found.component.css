@@ -1,0 +1,14 @@
+.error-404-parent {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.error-404 {
+  margin: auto;
+  font-size: 100px;
+}
+
+/*# sourceMappingURL=not-found.component.css.map */

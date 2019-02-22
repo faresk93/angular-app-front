@@ -1,0 +1,29 @@
+<div class="container">
+  <div>
+    <h2>Articles</h2>
+    <button
+      class="btn btn-info"
+      (click)="getSelectedRows()"
+    >Get Selected Rows
+    </button>
+  </div>
+
+  <div class="mt-5">
+    <ag-grid-angular
+      #agGrid
+      style="height: 500px;width: 100%"
+      class="ag-theme-balham"
+      [columnDefs]="columnDefs"
+      [rowData]="rowData"
+      (cellValueChanged)="onCellChanged($event)"
+      rowSelection="multiple"
+      animateRows
+      suppressAutoSize="true"
+      suppressColumnVirtualisation="true"
+      [overlayLoadingTemplate]="loading"
+      [overlayNoRowsTemplate]="loading"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>
+
+</div>

@@ -1,0 +1,5 @@
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: #e53935 solid 2px;
+}
+
+/*# sourceMappingURL=recipe-edit.component.css.map */

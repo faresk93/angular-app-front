@@ -1,0 +1,16 @@
+
+<a
+        class="list-group-item clearfix"
+        [routerLink]="[recipe.id]"
+        routerLinkActive="active"
+>
+    <div class="d-flex justify-content-between">
+        <div>
+            <p class="list-group-item text-dark">{{recipe.name}}</p>
+            <p class="list-group-item text-muted">{{recipe.description | shorten}}</p>
+        </div>
+        <span class="pull-right">
+                    <img [src]="recipe.image_path" alt="recipe image" class="img-responsive">
+                </span>
+    </div>
+</a>

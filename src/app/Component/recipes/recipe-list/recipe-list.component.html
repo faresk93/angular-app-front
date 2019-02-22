@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+        <!--<button (click)="openModal()" class="btn btn-success">New Recipe</button>-->
+        <button (click)="onNewRecipte()" class="btn btn-success">New Recipe</button>
+        <hr>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="form-inline">
+            <label class="badge badge-success">Search</label>
+            <input class="form-control" type="text" placeholder="type a recipe name.." [(ngModel)]="filteredString">
+            <i class="fas fa-search" style="color: #43a047"></i>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-recipe-item
+                *ngFor="let recipe of recipes | filter:filteredString:'name'"
+                [recipe]="recipe"
+        ></app-recipe-item>
+    </div>
+</div>

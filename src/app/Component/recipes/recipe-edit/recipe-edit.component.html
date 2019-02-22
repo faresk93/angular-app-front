@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-12">
+                    <button [disabled]="recipeForm.invalid" type="submit" class="btn btn-success">Save</button>
+                    <button (click)="cancel()" type="button" class="btn btn-warning">Cancel</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                                formControlName="name"
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-control"
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="image_path">Image Url</label>
+                        <input
+                                formControlName="image_path"
+                                type="text"
+                                id="image_path"
+                                name="image_path"
+                                class="form-control"
+                                #image_path
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <img src="{{image_path.value}}"
+                         [alt]="!image_path.value ? '' : 'invalid image path'"
+                         class="img-responsive img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea
+                                formControlName="description"
+                                type="text"
+                                id="description"
+                                name="description"
+                                class="form-control"
+                                rows="6"
+                        >
+            </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" formArrayName="ingredients">
+                    <div class="row mb-2"
+                         *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index;"
+                         [formGroupName]="i"
+                    >
+                        <div class="col-8">
+                            <input type="text" class="form-control" formControlName="name">
+                            <div *ngIf="ingredientCtrl.invalid && ingredientCtrl.touched" class="small text-danger">
+                                Please enter a valid name
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <input type="number" min="1" class="form-control" formControlName="amount">
+                        </div>
+                        <div class="col-1">
+                            <button (click)="onRemoveIngredient(i)" class="btn btn-danger" type="button">X</button>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <button (click)="onAddIngredient()" class="btn btn-success" type="button">Add Ingredient
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
